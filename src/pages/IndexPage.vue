@@ -1,42 +1,66 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page class="row justify-center">
+    <q-carousel animated v-model="slide" arrows style="height: 100vh; width: 100%">
+      <q-carousel-slide v-for="s in slides" :name="s.name" :img-src="s.imgSrc" :key="s.name">
+        <div class="absolute-bottom custom-caption">
+          <div class="text-h2" v-if="s.caption">{{ s.caption }}</div>
+          <div class="text-h5" v-if="s.content">{{ s.content }}</div>
+        </div>
+      </q-carousel-slide>
+    </q-carousel>
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
+/* eslint-disable global-require */
 import { ref } from 'vue';
 
-const todos = ref<Todo[]>([
+const slide = ref(1);
+
+const slides = [
   {
-    id: 1,
-    content: 'ct1',
+    name: 1,
+    imgSrc: require('src/assets/thomas-am-grill.jpg'),
+    caption: 'Herzlichen Glückwunsch!',
+    content: 'Du hast es wieder nicht geschafft, den Darwin Award zu gewinnen.',
   },
   {
-    id: 2,
-    content: 'ct2',
+    name: 2,
+    imgSrc: require('src/assets/kronkorken.jpg'),
+    content: 'Das möchten wir mit dir Feiern',
   },
   {
-    id: 3,
-    content: 'ct3',
+    name: 3,
+    imgSrc: require('src/assets/mit-helm.jpg'),
+    caption: 'Dein Geschenk',
+    content: 'Als Belohnung dafür darfst du einen Ausflug zu einem Paintball-Gelände organisieren. Wir freuen uns schon auf die blauen Flecken.',
   },
   {
-    id: 4,
-    content: 'ct4',
+    name: 4,
+    imgSrc: require('src/assets/gruppenfoto.jpg'),
+    caption: 'Alles Gute!',
+    content: 'Wünschen dir Alex, Christoph, Franka, Jan, Johannes, Jonas, Marius und Sarah.',
   },
   {
-    id: 5,
-    content: 'ct5',
+    name: 5,
+    imgSrc: require('src/assets/bier.jpg'),
+    caption: 'Und nun.. Prost!',
   },
-]);
-const meta = ref<Meta>({
-  totalCount: 1200,
-});
+  {
+    name: 6,
+    imgSrc: require('assets/wo-blocker.jpg'),
+    caption: 'Achja..',
+  },
+];
+
 </script>
+
+<style lang="scss">
+.custom-caption {
+  text-align: center;
+  padding: 12px;
+  color: white;
+  background-color: rgba(0, 0, 0, .3);
+  font-family: Impact, sans-serif;
+}
+</style>
