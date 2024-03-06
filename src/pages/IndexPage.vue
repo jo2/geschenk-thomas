@@ -2,7 +2,7 @@
   <q-page class="row justify-center">
     <q-carousel animated v-model="slide" arrows style="height: 100vh; width: 100%">
       <q-carousel-slide :name="1">
-        <q-video class="absolute-full" src="https://www.youtube.com/embed/iik25wqIuFo?autoplay=1" />
+        <iframe width="420" height="345" src="http://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1" frameborder="0" allowfullscreen></iframe>
       </q-carousel-slide>
 
       <q-carousel-slide v-for="s in slides" :name="s.name" :img-src="s.imgSrc" :key="s.name">
