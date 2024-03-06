@@ -4,7 +4,7 @@
       <q-carousel-slide name="1">
         <q-video class="absolute-full" src="https://www.youtube.com/embed/iik25wqIuFo" />
       </q-carousel-slide>
-      
+
       <q-carousel-slide v-for="s in slides" :name="s.name" :img-src="s.imgSrc" :key="s.name">
         <div class="absolute-bottom custom-caption">
           <div class="text-h2" v-if="s.caption">{{ s.caption }}</div>
