@@ -1,7 +1,7 @@
 <template>
   <q-page class="row justify-center">
     <q-carousel animated v-model="slide" arrows style="height: 100vh; width: 100%">
-      <q-carousel-slide name="1">
+      <q-carousel-slide :name="1">
         <q-video class="absolute-full" src="https://www.youtube.com/embed/iik25wqIuFo" />
       </q-carousel-slide>
 
