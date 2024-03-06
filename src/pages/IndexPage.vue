@@ -1,10 +1,6 @@
 <template>
   <q-page class="row justify-center">
     <q-carousel animated v-model="slide" arrows style="height: 100vh; width: 100%">
-      <q-carousel-slide :name="1">
-        <iframe width="420" height="345" src="http://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1" frameborder="0" allowfullscreen></iframe>
-      </q-carousel-slide>
-
       <q-carousel-slide v-for="s in slides" :name="s.name" :img-src="s.imgSrc" :key="s.name">
         <div class="absolute-bottom custom-caption">
           <div class="text-h2" v-if="s.caption">{{ s.caption }}</div>
@@ -22,6 +18,12 @@ import { ref } from 'vue';
 const slide = ref(1);
 
 const slides = [
+  {
+    name: 1,
+    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjQVFCbGHYxtXrn_ve_RS-xo13DGf314m8l7dbwCgxEQ&s",
+    caption: "Herr Schlütter",
+    content: "Ficken Sie sich! LG Marius.",
+  },
   {
     name: 2,
     imgSrc: require('src/assets/thomas-am-grill.jpg'),
