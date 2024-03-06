@@ -20,7 +20,7 @@ const slide = ref(1);
 const slides = [
   {
     name: 1,
-    imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjQVFCbGHYxtXrn_ve_RS-xo13DGf314m8l7dbwCgxEQ&s",
+    imgSrc: require('src/assets/mittelfinger.png'),
     caption: "Herr Schlütter",
     content: "Ficken Sie sich! LG Marius.",
   },
